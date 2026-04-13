@@ -1,0 +1,205 @@
+[
+  {
+    "id": "pm-kisan",
+    "name": "PM Kisan Samman Nidhi",
+    "category": "Agriculture",
+    "description": "A central sector scheme that provides income support to all landholding farmers' families in the country to supplement their financial needs.",
+    "eligibility": "All landholding farmers' families (subject to certain exclusion criteria).",
+    "ageLimit": "18 years and above.",
+    "documents": ["Aadhaar Card", "Land Ownership Documents", "Bank Account Details", "Mobile Number"],
+    "charges": "Free of cost.",
+    "applicationProcess": [
+      "Visit the official PM Kisan portal.",
+      "Click on 'New Farmer Registration'.",
+      "Enter Aadhaar number and fill the application form.",
+      "Upload required documents and submit."
+    ],
+    "whereToApply": {
+      "online": "https://pmkisan.gov.in/",
+      "offline": "Common Service Centres (CSC) or local Agriculture Office."
+    },
+    "officialLink": "https://pmkisan.gov.in/"
+  },
+  {
+    "id": "ayushman-bharat",
+    "name": "Ayushman Bharat (PM-JAY)",
+    "category": "Health",
+    "description": "The world's largest health insurance scheme, providing a health cover of Rs. 5 lakhs per family per year for secondary and tertiary care hospitalization.",
+    "eligibility": "Families identified by the SECC 2011 data based on occupational and deprivation criteria.",
+    "ageLimit": "No age limit.",
+    "documents": ["Aadhaar Card", "Ration Card", "Identity Proof"],
+    "charges": "Free of cost.",
+    "applicationProcess": [
+      "Check eligibility on the PM-JAY website.",
+      "Visit an empanelled hospital with required ID proofs.",
+      "The hospital will verify your identity and provide treatment.",
+      "No cash payment is required at the hospital."
+    ],
+    "whereToApply": {
+      "online": "https://setu.pmjay.gov.in/",
+      "offline": "Empanelled public and private hospitals."
+    },
+    "officialLink": "https://pmjay.gov.in/"
+  },
+  {
+    "id": "sukanya-samriddhi",
+    "name": "Sukanya Samriddhi Yojana",
+    "category": "Women",
+    "description": "A small deposit scheme for the girl child, launched as a part of the 'Beti Bachao Beti Padhao' campaign, offering high interest rates and tax benefits.",
+    "eligibility": "Parents or legal guardians of a girl child below 10 years.",
+    "ageLimit": "Girl child must be below 10 years at the time of opening the account.",
+    "documents": ["Birth Certificate of the girl child", "Identity Proof of parent/guardian", "Address Proof"],
+    "charges": "Minimum deposit of Rs. 250 per year.",
+    "applicationProcess": [
+      "Visit any post office or authorized bank branch.",
+      "Fill the Sukanya Samriddhi Account opening form.",
+      "Submit the form with the birth certificate and ID proofs.",
+      "Make the initial deposit."
+    ],
+    "whereToApply": {
+      "offline": "Post Offices or authorized commercial banks."
+    },
+    "officialLink": "https://www.indiapost.gov.in/"
+  },
+  {
+    "id": "pm-awas-yojana",
+    "name": "Pradhan Mantri Awas Yojana (PMAY)",
+    "category": "Housing",
+    "description": "An initiative to provide affordable housing to the urban and rural poor with a target of building 2 crore affordable houses.",
+    "eligibility": "Families with no pucca house, belonging to EWS, LIG, or MIG categories.",
+    "ageLimit": "18 years and above.",
+    "documents": ["Aadhaar Card", "Income Certificate", "Identity Proof", "Address Proof", "Bank Account Details"],
+    "charges": "Nominal application fee (if applied through CSC).",
+    "applicationProcess": [
+      "Visit the official PMAY portal.",
+      "Select 'Citizen Assessment' and choose the appropriate category.",
+      "Fill in the Aadhaar details and application form.",
+      "Save and submit the application."
+    ],
+    "whereToApply": {
+      "online": "https://pmaymis.gov.in/",
+      "offline": "Common Service Centres (CSC)."
+    },
+    "officialLink": "https://pmaymis.gov.in/"
+  },
+  {
+    "id": "pm-mudra-yojana",
+    "name": "PM Mudra Yojana (PMMY)",
+    "category": "Employment",
+    "description": "Provides loans up to 10 lakh to non-corporate, non-farm small/micro enterprises to help them start or expand their business.",
+    "eligibility": "Any Indian citizen who has a business plan for a non-farm sector income generating activity.",
+    "ageLimit": "18 years and above.",
+    "documents": ["Identity Proof", "Address Proof", "Business Plan", "Photographs", "Quotation of machinery/items to be purchased"],
+    "charges": "No processing fee for Shishu loans (up to Rs. 50,000).",
+    "applicationProcess": [
+      "Prepare a business plan.",
+      "Visit a nearby bank, NBFC, or MFI.",
+      "Fill the Mudra loan application form.",
+      "Submit the form with required documents."
+    ],
+    "whereToApply": {
+      "online": "https://www.udyamimitra.in/",
+      "offline": "Public/Private Sector Banks, Regional Rural Banks, Small Finance Banks."
+    },
+    "officialLink": "https://www.mudra.org.in/"
+  },
+  {
+    "id": "atal-pension-yojana",
+    "name": "Atal Pension Yojana (APY)",
+    "category": "Senior Citizens",
+    "description": "A pension scheme focused on the unorganized sector, providing a guaranteed minimum pension of Rs. 1,000 to Rs. 5,000 per month after the age of 60.",
+    "eligibility": "Any Indian citizen between 18 and 40 years having a savings bank account.",
+    "ageLimit": "18 to 40 years.",
+    "documents": ["Aadhaar Card", "Mobile Number", "Savings Bank Account Details"],
+    "charges": "Monthly/Quarterly/Half-yearly contribution based on age and pension amount.",
+    "applicationProcess": [
+      "Visit the bank where you have a savings account.",
+      "Fill the APY registration form.",
+      "Provide Aadhaar and mobile number.",
+      "Ensure sufficient balance for auto-debit of contributions."
+    ],
+    "whereToApply": {
+      "offline": "Any bank where you hold a savings account."
+    },
+    "officialLink": "https://www.npscra.nsdl.co.in/scheme-details.php"
+  },
+  {
+    "id": "pm-poshan",
+    "name": "PM POSHAN (Mid-Day Meal)",
+    "category": "Education",
+    "description": "Provides hot cooked meals to children in government and government-aided schools to improve their nutritional status and encourage school attendance.",
+    "eligibility": "Children studying in classes I to VIII in government and government-aided schools.",
+    "ageLimit": "School-going children (typically 6 to 14 years).",
+    "documents": ["School Enrollment Details"],
+    "charges": "Free of cost.",
+    "applicationProcess": [
+      "Automatic enrollment for children attending government schools.",
+      "No separate application required by parents."
+    ],
+    "whereToApply": {
+      "offline": "Respective Government or Government-aided schools."
+    },
+    "officialLink": "https://pmposhan.education.gov.in/"
+  },
+  {
+    "id": "digital-india-scholarship",
+    "name": "National Scholarship Portal (NSP)",
+    "category": "Education",
+    "description": "A one-stop solution for various scholarship schemes offered by Central and State governments for students from class 1 to Ph.D.",
+    "eligibility": "Students belonging to SC, ST, OBC, Minority, or EWS categories (varies by specific scholarship).",
+    "ageLimit": "Varies by scholarship scheme.",
+    "documents": ["Aadhaar Card", "Educational Certificates", "Income Certificate", "Caste Certificate", "Bank Passbook"],
+    "charges": "Free of cost.",
+    "applicationProcess": [
+      "Register on the National Scholarship Portal.",
+      "Login and fill the application form for the eligible scheme.",
+      "Upload required documents.",
+      "Submit and track the application status."
+    ],
+    "whereToApply": {
+      "online": "https://scholarships.gov.in/"
+    },
+    "officialLink": "https://scholarships.gov.in/"
+  },
+  {
+    "id": "pm-jan-dhan-yojana",
+    "name": "PM Jan Dhan Yojana (PMJDY)",
+    "category": "Employment",
+    "description": "A national mission for financial inclusion to ensure access to financial services, namely, basic savings & deposit accounts, remittance, credit, insurance, and pension.",
+    "eligibility": "Any Indian citizen who does not have a bank account.",
+    "ageLimit": "10 years and above.",
+    "documents": ["Aadhaar Card", "Voter ID", "PAN Card", "Driving License", "NREGA Job Card"],
+    "charges": "Zero balance account opening.",
+    "applicationProcess": [
+      "Visit any bank branch or Bank Mitr outlet.",
+      "Fill the account opening form.",
+      "Submit the form with ID and address proof.",
+      "Receive the RuPay debit card."
+    ],
+    "whereToApply": {
+      "offline": "Any bank branch or Business Correspondent (Bank Mitr) outlets."
+    },
+    "officialLink": "https://pmjdy.gov.in/"
+  },
+  {
+    "id": "pm-vaya-vandana",
+    "name": "PM Vaya Vandana Yojana",
+    "category": "Senior Citizens",
+    "description": "A pension scheme exclusively for senior citizens aged 60 years and above, offering a guaranteed rate of return for 10 years.",
+    "eligibility": "Senior citizens aged 60 years and above.",
+    "ageLimit": "60 years and above.",
+    "documents": ["Aadhaar Card", "PAN Card", "Bank Account Details", "Age Proof"],
+    "charges": "Purchase price (investment) varies based on the pension amount chosen.",
+    "applicationProcess": [
+      "Visit the LIC website or any LIC branch.",
+      "Fill the application form for PMVVY.",
+      "Submit the form with the investment amount.",
+      "Choose the frequency of pension payment (Monthly/Quarterly/Half-yearly/Yearly)."
+    ],
+    "whereToApply": {
+      "online": "https://www.licindia.in/",
+      "offline": "Life Insurance Corporation (LIC) of India branches."
+    },
+    "officialLink": "https://www.licindia.in/"
+  }
+]
