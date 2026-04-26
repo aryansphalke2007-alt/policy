@@ -3,19 +3,22 @@ import { Menu, X, Landmark as BridgeIcon } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '@/src/lib/utils';
-
-const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'Policies', href: '/policies' },
-  { name: 'Digital Literacy', href: '/digital-literacy' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' },
-];
+import { useTranslation } from 'react-i18next';
+import LanguageSelector from './LanguageSelector';
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+
+  const navLinks = [
+    { name: t('nav.home'), href: '/' },
+    { name: t('nav.policies'), href: '/policies' },
+    { name: t('nav.digitalLiteracy'), href: '/digital-literacy' },
+    { name: t('nav.about'), href: '/about' },
+    { name: t('nav.contact'), href: '/contact' },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,10 +54,10 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
-                key={link.name}
+                key={link.href}
                 to={link.href}
                 className={cn(
                   'text-sm font-medium transition-colors hover:text-blue-600',
@@ -64,22 +67,27 @@ export default function Navbar() {
                 {link.name}
               </Link>
             ))}
+            <div className="h-6 w-px bg-slate-200 mx-2" />
+            <LanguageSelector />
             <Link
               to="/policies"
               className="bg-blue-600 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-md hover:shadow-lg active:scale-95"
             >
-              Find Policies
+              {t('common.findPolicies')}
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-slate-600 hover:text-blue-600 transition-colors"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          <div className="flex items-center gap-4 md:hidden">
+            <LanguageSelector />
+            <button
+              className="p-2 text-slate-600 hover:text-blue-600 transition-colors"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -95,7 +103,7 @@ export default function Navbar() {
             <div className="px-4 pt-2 pb-6 space-y-1">
               {navLinks.map((link) => (
                 <Link
-                  key={link.name}
+                  key={link.href}
                   to={link.href}
                   className={cn(
                     'block px-3 py-4 text-base font-medium rounded-md transition-colors',
@@ -112,7 +120,7 @@ export default function Navbar() {
                   to="/policies"
                   className="block w-full text-center bg-blue-600 text-white px-5 py-3 rounded-xl text-base font-semibold hover:bg-blue-700 transition-all"
                 >
-                  Find Policies
+                  {t('common.findPolicies')}
                 </Link>
               </div>
             </div>

@@ -1,0 +1,270 @@
+{
+  "common": {
+    "appName": "PolicyBridge",
+    "findPolicies": "Find Policies",
+    "getStarted": "Get Started Now",
+    "viewDetails": "View Details",
+    "back": "Back",
+    "loading": "Loading...",
+    "searchPlaceholder": "Search for policies...",
+    "all": "All",
+    "browseAll": "Browse All Policies",
+    "learnHow": "Learn How to Apply",
+    "visitPortal": "Visit Official Portal",
+    "comingSoon": "Coming Soon"
+  },
+  "buttons": {
+    "applyNow": "Apply Now",
+    "learnMore": "Learn More",
+    "viewAll": "View All"
+  },
+  "nav": {
+    "home": "Home",
+    "policies": "Policies",
+    "digitalLiteracy": "Digital Literacy",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "heroBadge": "Trusted by 1M+ Citizens",
+    "heroTitle": "Understand Government Policies Easily",
+    "heroSubtitle": "PolicyBridge simplifies complex government schemes, eligibility, and application processes so you can access your benefits without confusion.",
+    "searchPlaceholder": "Search for PM Kisan, Awas Yojana, Health schemes...",
+    "features": {
+      "langTitle": "Multi-Language Support",
+      "langDesc": "Access policy information in your regional language for better understanding.",
+      "updateTitle": "Real-time Updates",
+      "updateDesc": "Get the latest information on new schemes and changes in existing policies instantly.",
+      "verifyTitle": "Verified Information",
+      "verifyDesc": "All data is sourced directly from official government portals and verified by experts."
+    },
+    "popularTitle": "Popular Policies",
+    "popularSubtitle": "Check out the most searched and beneficial schemes currently available for citizens.",
+    "viewAll": "View All Policies",
+    "ctaTitle": "Ready to find the right scheme for you?",
+    "ctaSubtitle": "Join thousands of citizens who are already benefiting from government policies with the help of PolicyBridge.",
+    "steps": {
+      "title": "How it Works",
+      "subtitle": "Getting your government benefits shouldn't be a struggle. Follow these three simple steps.",
+      "step1Title": "Search Policy",
+      "step1Desc": "Use our smart search to find policies that match your needs and eligibility.",
+      "step2Title": "Check Eligibility",
+      "step2Desc": "Read the simple requirements and document list to see if you qualify.",
+      "step3Title": "Apply Easily",
+      "step3Desc": "Follow our step-by-step guide to apply on the official government portal."
+    }
+  },
+  "policies": {
+    "title": "Government Policies & Schemes",
+    "subtitle": "Browse our comprehensive database of government initiatives. Filter by category or search to find exactly what you need.",
+    "showing": "Showing {{count}} Policy",
+    "showing_plural": "Showing {{count}} Policies",
+    "noResults": "No policies found",
+    "noResultsDesc": "Try adjusting your search or category filter.",
+    "clearFilters": "Clear All Filters"
+  },
+  "policy": {
+    "overview": "Overview",
+    "eligibility": "Eligibility Criteria",
+    "whoCanApply": "Who can apply?",
+    "ageLimit": "Age Limit",
+    "howToApply": "How to Apply",
+    "docsRequired": "Documents Required",
+    "charges": "Application Fees",
+    "whereToApply": "Where to Apply",
+    "online": "Online",
+    "offline": "Offline",
+    "id": "Policy ID",
+    "pm-kisan": {
+      "name": "PM Kisan Samman Nidhi",
+      "description": "A central sector scheme that provides income support to all landholding farmers' families in the country to supplement their financial needs.",
+      "eligibility": "All landholding farmers' families (subject to certain exclusion criteria).",
+      "applicationProcess": [
+        "Visit the official PM Kisan portal.",
+        "Click on 'New Farmer Registration'.",
+        "Enter Aadhaar number and fill the application form.",
+        "Upload required documents and submit."
+      ]
+    },
+    "ayushman-bharat": {
+      "name": "Ayushman Bharat (PM-JAY)",
+      "description": "The world's largest health insurance scheme, providing a health cover of Rs. 5 lakhs per family per year for secondary and tertiary care hospitalization.",
+      "eligibility": "Families identified by the SECC 2011 data based on occupational and deprivation criteria.",
+      "applicationProcess": [
+        "Check eligibility on the PM-JAY website.",
+        "Visit an empanelled hospital with required ID proofs.",
+        "The hospital will verify your identity and provide treatment.",
+        "No cash payment is required at the hospital."
+      ]
+    },
+    "sukanya-samriddhi": {
+      "name": "Sukanya Samriddhi Yojana",
+      "description": "A small deposit scheme for the girl child, launched as a part of the 'Beti Bachao Beti Padhao' campaign, offering high interest rates and tax benefits.",
+      "eligibility": "Parents or legal guardians of a girl child below 10 years.",
+      "applicationProcess": [
+        "Visit any post office or authorized bank branch.",
+        "Fill the Sukanya Samriddhi Account opening form.",
+        "Submit the form with the birth certificate and ID proofs.",
+        "Make the initial deposit."
+      ]
+    },
+    "pm-awas-yojana": {
+      "name": "Pradhan Mantri Awas Yojana (PMAY)",
+      "description": "An initiative to provide affordable housing to the urban and rural poor with a target of building 2 crore affordable houses.",
+      "eligibility": "Families with no pucca house, belonging to EWS, LIG, or MIG categories.",
+      "applicationProcess": [
+        "Visit the official PMAY portal.",
+        "Select 'Citizen Assessment' and choose the appropriate category.",
+        "Fill in the Aadhaar details and application form.",
+        "Save and submit the application."
+      ]
+    },
+    "pm-mudra-yojana": {
+      "name": "PM Mudra Yojana (PMMY)",
+      "description": "Provides loans up to 10 lakh to non-corporate, non-farm small/micro enterprises to help them start or expand their business.",
+      "eligibility": "Any Indian citizen who has a business plan for a non-farm sector income generating activity.",
+      "applicationProcess": [
+        "Prepare a business plan.",
+        "Visit a nearby bank, NBFC, or MFI.",
+        "Fill the Mudra loan application form.",
+        "Submit the form with required documents."
+      ]
+    },
+    "atal-pension-yojana": {
+      "name": "Atal Pension Yojana (APY)",
+      "description": "A pension scheme focused on the unorganized sector, providing a guaranteed minimum pension of Rs. 1,000 to Rs. 5,000 per month after the age of 60.",
+      "eligibility": "Any Indian citizen between 18 and 40 years having a savings bank account.",
+      "applicationProcess": [
+        "Visit the bank where you have a savings account.",
+        "Fill the APY registration form.",
+        "Provide Aadhaar and mobile number.",
+        "Ensure sufficient balance for auto-debit of contributions."
+      ]
+    },
+    "pm-poshan": {
+      "name": "PM POSHAN (Mid-Day Meal)",
+      "description": "Provides hot cooked meals to children in government and government-aided schools to improve their nutritional status and encourage school attendance.",
+      "eligibility": "Children studying in classes I to VIII in government and government-aided schools.",
+      "applicationProcess": [
+        "Automatic enrollment for children attending government schools.",
+        "No separate application required by parents."
+      ]
+    },
+    "digital-india-scholarship": {
+      "name": "National Scholarship Portal (NSP)",
+      "description": "A one-stop solution for various scholarship schemes offered by Central and State governments for students from class 1 to Ph.D.",
+      "eligibility": "Students belonging to SC, ST, OBC, Minority, or EWS categories (varies by specific scholarship).",
+      "applicationProcess": [
+        "Register on the National Scholarship Portal.",
+        "Login and fill the application form for the eligible scheme.",
+        "Upload required documents.",
+        "Submit and track the application status."
+      ]
+    },
+    "pm-jan-dhan-yojana": {
+      "name": "PM Jan Dhan Yojana (PMJDY)",
+      "description": "A national mission for financial inclusion to ensure access to financial services, namely, basic savings & deposit accounts, remittance, credit, insurance, and pension.",
+      "eligibility": "Any Indian citizen who does not have a bank account.",
+      "applicationProcess": [
+        "Visit any bank branch or Bank Mitr outlet.",
+        "Fill the account opening form.",
+        "Submit the form with ID and address proof.",
+        "Receive the RuPay debit card."
+      ]
+    },
+    "pm-vaya-vandana": {
+      "name": "PM Vaya Vandana Yojana",
+      "description": "A pension scheme exclusively for senior citizens aged 60 years and above, offering a guaranteed rate of return for 10 years.",
+      "eligibility": "Senior citizens aged 60 years and above.",
+      "applicationProcess": [
+        "Visit the LIC website or any LIC branch.",
+        "Fill the application form for PMVVY.",
+        "Submit the form with the investment amount.",
+        "Choose the frequency of pension payment (Monthly/Quarterly/Half-yearly/Yearly)."
+      ]
+    }
+  },
+  "digital": {
+    "title": "Digital Literacy Guide",
+    "subtitle": "New to online applications? Don't worry. Our step-by-step guides will help you navigate the digital world of government services with confidence.",
+    "watchVideo": "Watch Video Tutorial",
+    "videoTitle": "Visual Learning: How to Apply Online",
+    "videoDesc": "Sometimes seeing is better than reading. Watch our comprehensive video guide that covers everything from registration to final submission.",
+    "faqTitle": "Common Questions",
+    "faqSubtitle": "Quick answers to help you get started.",
+    "resourcesTitle": "Official Learning Resources",
+    "resourcesSubtitle": "Explore these official government platforms for more digital training and information.",
+    "guide1Title": "Using Government Portals",
+    "guide1Desc": "Learn how to navigate official websites, create accounts, and find the right application forms.",
+    "guide2Title": "Uploading Documents",
+    "guide2Desc": "Step-by-step guide on scanning, resizing, and uploading your ID proofs and certificates safely.",
+    "guide3Title": "Staying Safe Online",
+    "guide3Desc": "How to identify official websites and protect your personal information from online scams.",
+    "faq1Q": "How do I know if a website is official?",
+    "faq1A": "Official Indian government websites usually end with .gov.in or .nic.in. Always look for the 'https://' and a lock icon in the address bar.",
+    "faq2Q": "What if I don't have a scanner?",
+    "faq2A": "You can use mobile apps like Adobe Scan or Microsoft Lens to take clear photos of your documents and convert them to PDF.",
+    "faq3Q": "Is it safe to share my Aadhaar number?",
+    "faq3A": "Only share your Aadhaar number on official government portals. Never share it over WhatsApp, email, or with unknown persons."
+  },
+  "about": {
+    "missionLabel": "Our Mission",
+    "missionTitle": "Bridging the Gap Between Citizens & Government",
+    "missionDesc": "PolicyBridge was founded with a simple yet powerful goal: to ensure that no citizen is left behind due to a lack of information or digital skills. We act as a transparent bridge, translating complex government policies into actionable knowledge.",
+    "statsPolicies": "Policies Simplified",
+    "statsUsers": "Monthly Users",
+    "statsLanguages": "Languages",
+    "valuesTitle": "What We Stand For",
+    "valuesSubtitle": "Our core values drive everything we do, from how we research policies to how we design our interface.",
+    "value1Title": "Clarity",
+    "value1Desc": "We break down complex legal jargon into simple, everyday language that anyone can understand.",
+    "value2Title": "Transparency",
+    "value2Desc": "We provide direct links to official sources and clearly state eligibility and charges for every policy.",
+    "value3Title": "Accessibility",
+    "value3Desc": "Our platform is designed to be usable by everyone, regardless of their digital literacy or device.",
+    "awarenessTitle": "Why Awareness Matters",
+    "awarenessDesc": "Millions of dollars in government benefits go unclaimed every year simply because people don't know they exist or don't know how to apply. We are changing that.",
+    "awarenessPoint1": "Reduces corruption by increasing transparency.",
+    "awarenessPoint2": "Empowers vulnerable sections of society.",
+    "awarenessPoint3": "Speeds up the digital transformation of India."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have questions about a policy or need help with the platform? Our team is here to support you.",
+    "infoTitle": "Contact Information",
+    "infoDesc": "Reach out to us through any of these channels. We typically respond within 24-48 hours.",
+    "emailLabel": "Email Us",
+    "emailSub": "For general inquiries and support",
+    "phoneLabel": "Call Us",
+    "phoneSub": "Mon-Fri, 9am to 6pm IST",
+    "officeLabel": "Our Office",
+    "officeSub": "Visit us for in-person consultation",
+    "communityTitle": "Community Support",
+    "communityDesc": "Join our community forum to discuss policies with other citizens and experts.",
+    "joinForum": "Join Forum",
+    "formTitle": "Send a Message",
+    "nameLabel": "Full Name",
+    "emailInputLabel": "Email Address",
+    "subjectLabel": "Subject",
+    "messageLabel": "Your Message",
+    "sendButton": "Send Message",
+    "successTitle": "Message Sent!",
+    "successDesc": "Thank you for reaching out. We have received your message and will get back to you shortly.",
+    "sendAnother": "Send Another Message"
+  },
+  "footer": {
+    "address": "123 Policy Street, New Delhi, India",
+    "rights": "All rights reserved.",
+    "categories": "Categories",
+    "quickLinks": "Quick Links"
+  },
+  "categories": {
+    "Education": "Education",
+    "Health": "Health",
+    "Agriculture": "Agriculture",
+    "Women": "Women",
+    "Senior Citizens": "Senior Citizens",
+    "Employment": "Employment",
+    "Housing": "Housing"
+  }
+}

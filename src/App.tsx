@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import FloatingGuide from './components/FloatingGuide';
+import { setupExternalLinkInterception } from './utils/guideInjector';
 import Home from './pages/Home';
 import Policies from './pages/Policies';
 import PolicyDetails from './pages/PolicyDetails';
@@ -18,6 +20,10 @@ function ScrollToTop() {
 }
 
 export default function App() {
+  useEffect(() => {
+    setupExternalLinkInterception();
+  }, []);
+
   return (
     <Router>
       <div className="min-h-screen flex flex-col bg-white selection:bg-blue-100 selection:text-blue-900">
@@ -34,6 +40,7 @@ export default function App() {
           </Routes>
         </main>
         <Footer />
+        <FloatingGuide />
       </div>
     </Router>
   );

@@ -1,0 +1,185 @@
+/* PolicyBridge Guide Extension Styles */
+
+#pb-guide-root {
+    all: initial;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2147483647; /* Maximum possible z-index */
+}
+
+/* Floating Tab Button */
+.pb-guide-tab {
+    background-color: #2563eb; /* Blue 600 */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s, background-color 0.2s;
+    user-select: none;
+}
+
+.pb-guide-tab:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+.pb-guide-tab svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Panel Container */
+.pb-guide-panel {
+    display: none;
+    background-color: white;
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* Header */
+.pb-guide-header {
+    background-color: #2563eb;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    cursor: move;
+}
+
+.pb-guide-title {
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pb-guide-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.pb-guide-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pb-guide-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Content Area */
+.pb-guide-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background-color: #f8fafc;
+    color: #334155;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.pb-guide-section {
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.pb-guide-section-title {
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pb-guide-section-content {
+    color: #475569;
+}
+
+.pb-guide-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 5px;
+    background-color: #dcfce7;
+    color: #166534;
+}
+
+/* Analysis State */
+.pb-guide-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #64748b;
+    gap: 15px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.pb-guide-spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #e2e8f0;
+    border-top-color: #2563eb;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Scrollbar */
+.pb-guide-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.pb-guide-content::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.pb-guide-content::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.pb-guide-content::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Iconography Helpers */
+.pb-icon-blue { color: #2563eb; }
+.pb-icon-green { color: #16a34a; }
+.pb-icon-orange { color: #ea580c; }

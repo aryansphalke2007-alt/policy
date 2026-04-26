@@ -1,66 +1,118 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { SearchX } from 'lucide-react';
-import SearchBar from '@/src/components/SearchBar';
+import { Search, FilterX } from 'lucide-react';
 import CategoryFilter from '@/src/components/CategoryFilter';
 import PolicyCard from '@/src/components/PolicyCard';
 import policiesData from '@/src/data/policies.json';
 import { Policy, Category } from '@/src/types';
+import { useTranslation } from 'react-i18next';
 
 export default function Policies() {
+  const { t } = useTranslation();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearch] = useState(searchParams.get('search') || '');
-  const [category, setCategory] = useState<(Category | 'All')>(
-    (searchParams.get('category') as Category) || 'All'
-  );
+  const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
+  
+  const activeCategory = (searchParams.get('category') as Category | 'All') || 'All';
 
-  // Sync state with URL params
-  useEffect(() => {
-    const newParams = new URLSearchParams();
-    if (search) newParams.set('search', search);
-    if (category !== 'All') newParams.set('category', category);
-    setSearchParams(newParams, { replace: true });
-  }, [search, category, setSearchParams]);
+  // Translate policies data dynamically from i18n
+  const translatedPolicies = useMemo(() => {
+    return (policiesData as Policy[]).map(policy => ({
+      ...policy,
+      name: t(`policy.${policy.id}.name`),
+      description: t(`policy.${policy.id}.description`),
+      eligibility: t(`policy.${policy.id}.eligibility`),
+    }));
+  }, [t]);
 
   const filteredPolicies = useMemo(() => {
-    return (policiesData as Policy[]).filter((policy) => {
-      const matchesSearch = policy.name.toLowerCase().includes(search.toLowerCase()) ||
-                          policy.description.toLowerCase().includes(search.toLowerCase());
-      const matchesCategory = category === 'All' || policy.category === category;
+    return translatedPolicies.filter((policy) => {
+      const matchesSearch = 
+        policy.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        policy.description.toLowerCase().includes(searchQuery.toLowerCase());
+      
+      const matchesCategory = activeCategory === 'All' || policy.category === activeCategory;
+      
       return matchesSearch && matchesCategory;
     });
-  }, [search, category]);
+  }, [translatedPolicies, searchQuery, activeCategory]);
+
+  const handleCategoryChange = (category: Category | 'All') => {
+    const newParams = new URLSearchParams(searchParams);
+    if (category === 'All') {
+      newParams.delete('category');
+    } else {
+      newParams.set('category', category);
+    }
+    setSearchParams(newParams);
+  };
+
+  const clearFilters = () => {
+    setSearchQuery('');
+    setSearchParams({});
+  };
 
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-slate-50">
+    <div className="pt-32 pb-20 min-h-screen bg-slate-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-            Government Policies & Schemes
-          </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-12">
-            Browse our comprehensive database of government initiatives. Filter by category or search to find exactly what you need.
-          </p>
-
-          <SearchBar 
-            value={search} 
-            onChange={setSearch} 
-            className="mb-8"
-          />
-          
-          <CategoryFilter 
-            selected={category} 
-            onSelect={setCategory} 
-          />
+        {/* Header */}
+        <div className="mb-12 text-center max-w-3xl mx-auto">
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight"
+          >
+            {t('policies.title')}
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-lg text-slate-600"
+          >
+            {t('policies.subtitle')}
+          </motion.p>
         </div>
 
+        {/* Search and Filter Bar */}
+        <div className="sticky top-24 z-30 bg-white/80 backdrop-blur-md p-4 rounded-3xl border border-slate-200 shadow-xl shadow-slate-200/50 mb-12">
+          <div className="flex flex-col lg:flex-row gap-6 items-center">
+            <div className="relative w-full lg:w-96">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder={t('common.searchPlaceholder')}
+                className="w-full pl-12 pr-4 py-3 bg-slate-50 border-none rounded-2xl focus:ring-2 focus:ring-blue-500 transition-all"
+              />
+            </div>
+            <div className="w-full overflow-x-auto pb-2 lg:pb-0">
+              <CategoryFilter 
+                selected={activeCategory} 
+                onSelect={handleCategoryChange} 
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Results Info */}
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-xl font-bold text-slate-900">
-            Showing {filteredPolicies.length} {filteredPolicies.length === 1 ? 'Policy' : 'Policies'}
-          </h2>
+          <p className="text-slate-500 font-medium">
+            {t('policies.showing', { count: filteredPolicies.length })}
+          </p>
+          {(searchQuery || activeCategory !== 'All') && (
+            <button 
+              onClick={clearFilters}
+              className="flex items-center gap-2 text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors"
+            >
+              <FilterX className="w-4 h-4" />
+              {t('policies.clearFilters')}
+            </button>
+          )}
         </div>
 
+        {/* Policies Grid */}
         <AnimatePresence mode="popLayout">
           {filteredPolicies.length > 0 ? (
             <motion.div 
@@ -72,26 +124,16 @@ export default function Policies() {
               ))}
             </motion.div>
           ) : (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              className="flex flex-col items-center justify-center py-24 bg-white rounded-[3rem] border border-slate-200 shadow-sm"
+              className="py-20 text-center bg-white rounded-[2rem] border border-dashed border-slate-300"
             >
-              <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mb-6">
-                <SearchX className="w-10 h-10 text-slate-400" />
+              <div className="w-20 h-20 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Search className="w-10 h-10 text-slate-300" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-2">No policies found</h3>
-              <p className="text-slate-500 mb-8">Try adjusting your search or category filter.</p>
-              <button
-                onClick={() => {
-                  setSearch('');
-                  setCategory('All');
-                }}
-                className="px-6 py-3 bg-blue-600 text-white rounded-xl font-bold hover:bg-blue-700 transition-all"
-              >
-                Clear All Filters
-              </button>
+              <h3 className="text-2xl font-bold text-slate-900 mb-2">{t('policies.noResults')}</h3>
+              <p className="text-slate-500">{t('policies.noResultsDesc')}</p>
             </motion.div>
           )}
         </AnimatePresence>
