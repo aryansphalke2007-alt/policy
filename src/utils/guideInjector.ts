@@ -12,35 +12,53 @@ export const injectGuideToExternal = (url: string) => {
   
   if (!newWin) return;
 
-  // We try to inject a "Re-creation" script. 
-  // In a real cross-origin scenario, this next block will be blocked by the browser.
+  // Verify same-origin before attempting any access to window.document
+  let isSameOrigin = false;
   try {
+    const targetUrl = new URL(url, window.location.origin);
+    isSameOrigin = targetUrl.origin === window.location.origin;
+  } catch (e) {
+    isSameOrigin = false;
+  }
+
+  // If cross-origin, we cannot inject scripts via JS. 
+  // The companion extension handles these official government portals.
+  if (!isSameOrigin) {
+    console.info('PolicyBridge: External site detected. Note: For secure government portals, please use our companion extension for automated guidance.');
+    return;
+  }
+
+  // Injection logic for same-origin pages (internal pages)
+  try {
+    let attempts = 0;
     const checkLoad = setInterval(() => {
-      if (newWin.closed) {
+      attempts++;
+      if (newWin.closed || attempts > 20) {
         clearInterval(checkLoad);
         return;
       }
 
-      // If we could access the document (same-origin only)
-      if (newWin.document && newWin.document.body) {
+      try {
+        // Accessing .document on cross-origin windows throws SecurityError
+        if (newWin.document && newWin.document.body) {
+          clearInterval(checkLoad);
+          const script = newWin.document.createElement('script');
+          script.id = 'policy-bridge-guide-script';
+          script.innerHTML = `
+            console.log('PolicyBridge Guide Initialized');
+            const div = document.createElement('div');
+            div.id = 'policy-bridge-floating-root';
+            document.body.appendChild(div);
+          `;
+          newWin.document.body.appendChild(script);
+        }
+      } catch (innerError) {
+        // SOP block caught
         clearInterval(checkLoad);
-        const script = newWin.document.createElement('script');
-        script.id = 'policy-bridge-guide-script';
-        script.innerHTML = `
-          console.log('PolicyBridge Guide Initialized on External Page');
-          // Simulated Guide UI Injection
-          const div = document.createElement('div');
-          div.id = 'policy-bridge-floating-root';
-          document.body.appendChild(div);
-          
-          // Note: In a real app, this script would load the full React bundle 
-          // or a standalone version of the FloatingGuide component.
-        `;
-        newWin.document.body.appendChild(script);
       }
     }, 500);
   } catch (e) {
-    console.warn('PolicyBridge: Target site origin is different. Guide injection restricted by browser security.', e);
+    console.warn('PolicyBridge: Guide injection restricted by browser security.', e);
   }
 };
 
